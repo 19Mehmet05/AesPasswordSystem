@@ -19,10 +19,11 @@ namespace AesPasswordSystem
             InitializeComponent();
         }
 
-        
-            
-        
-
-       
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            AesPasswordAndSolition s = new AesPasswordAndSolition();
+            var sifreli = s.AesSifrele("okancan");
+            var temiz = s.AesSifre_Coz(sifreli);
+        }
     }
 }

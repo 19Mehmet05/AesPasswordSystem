@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+
 using System.Text;
-using System.Threading.Tasks;
+
 
 namespace AesPasswordSystem
 {
@@ -11,7 +10,7 @@ namespace AesPasswordSystem
         public static string KeyPassword()
         {
             string mastertext = Operation.Value();
-            byte[] dataarray = ASCIIEncoding.ASCII.GetBytes(mastertext);
+            byte[] dataarray = Encoding.ASCII.GetBytes(mastertext);
             string passwordtext = Convert.ToBase64String(dataarray);
             string cup = passwordtext.Substring(9, 16);
             passwordtext = cup;

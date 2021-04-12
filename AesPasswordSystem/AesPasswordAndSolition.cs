@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Security.Cryptography;
 
 namespace AesPasswordSystem
@@ -36,7 +33,7 @@ namespace AesPasswordSystem
         }
         public string AesSifre_Coz(string passwordtext)
         {
-            byte[] source = System.Convert.FromBase64String(passwordtext);
+            byte[] source = Convert.FromBase64String(passwordtext);
             using (ICryptoTransform decryptor = aesProvider.CreateDecryptor())
             {
                 byte[] hedef = decryptor.TransformFinalBlock(source, 0, source.Length);

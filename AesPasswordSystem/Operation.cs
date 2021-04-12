@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Management;
-using Microsoft.Win32;
-using System.Security.Cryptography;
 using System.Net;
 
 namespace AesPasswordSystem
@@ -51,18 +46,13 @@ namespace AesPasswordSystem
         {
 
             string displaycard = null;
-            ManagementObjectSearcher managementObjectSearcher = new ManagementObjectSearcher("SELECT * FROM Win32_VideoController");
-            foreach (var o in managementObjectSearcher.Get())
+            ManagementObjectSearcher objvide = new ManagementObjectSearcher("select * from Win32_VideoController");
+           
+            foreach (ManagementObject obj in objvide.Get())
             {
-                var managementObject = (ManagementObject)o;
-                foreach (PropertyData properties in managementObject.Properties)
-                {
-                    if (properties.Name == "SerialNumber")
-                    {
-                        displaycard = properties.Value.ToString();
-                    }
-                }
+                displaycard += (obj["PNPDeviceID"] + "\n");
             }
+            
             return displaycard;
         }
 
