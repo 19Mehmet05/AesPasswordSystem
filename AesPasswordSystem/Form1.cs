@@ -21,9 +21,9 @@ namespace AesPasswordSystem
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            AesPasswordAndSolition s = new AesPasswordAndSolition();
-            var sifreli = s.AesSifrele("okancan");
-            var temiz = s.AesSifre_Coz(sifreli);
+            ArunaObfuscation aruna = new ArunaObfuscation();
+            var s = aruna.Obfuscate("Okancan Coşar");
+            var c = aruna.Enlighten(s);
         }
     }
 }

@@ -4,13 +4,13 @@ using System.Security.Cryptography;
 
 namespace AesPasswordSystem
 {
-    public class AesPasswordAndSolition
+    public class ArunaObfuscation
     {
 
         private const string Aes_Server = @"!&+QWSDF!123126+";
         public string Aes_Key = Base64Password.KeyPassword();
         AesCryptoServiceProvider aesProvider = null;
-        public AesPasswordAndSolition()
+        public ArunaObfuscation()
         {
             aesProvider = new AesCryptoServiceProvider();
             aesProvider.BlockSize = 128;
@@ -22,7 +22,7 @@ namespace AesPasswordSystem
             aesProvider.Padding = PaddingMode.PKCS7;
         }
 
-        public string AesSifrele(string text)
+        public string Obfuscate(string text)
         {
             byte[] source = Encoding.Unicode.GetBytes(text);
             using (ICryptoTransform encrypt = aesProvider.CreateEncryptor())
@@ -31,7 +31,7 @@ namespace AesPasswordSystem
                 return Convert.ToBase64String(hedef);
             }
         }
-        public string AesSifre_Coz(string passwordtext)
+        public string Enlighten(string passwordtext)
         {
             byte[] source = Convert.FromBase64String(passwordtext);
             using (ICryptoTransform decryptor = aesProvider.CreateDecryptor())
