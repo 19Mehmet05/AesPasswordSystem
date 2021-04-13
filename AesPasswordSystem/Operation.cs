@@ -31,7 +31,7 @@ namespace AesPasswordSystem
 
         public static String CPUSeriNoCek()
         {
-            String processorID = "";
+            String processorID = null;
             ManagementObjectSearcher searcher = new ManagementObjectSearcher("Select * FROM WIN32_Processor");
             ManagementObjectCollection mObject = searcher.Get();
 
