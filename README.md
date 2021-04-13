@@ -1,4 +1,4 @@
 # Projeyi kullanmak isterseniz
-`string metin = Obfuscation.ArunaObfuscation("Mehmet");`<br>
-`string sonuc = Obfuscation.ArunaSolution(metin);`<br>
+`string text = ArunaObfuscation.Obfuscation(label1.Text);`<br>
+`string result = ArunaObfuscation.Enlighten(text);`<br>
 ## Yukarıdaki string değişkenleri kendi projenize uygun ayarlayabilirsiniz :)
