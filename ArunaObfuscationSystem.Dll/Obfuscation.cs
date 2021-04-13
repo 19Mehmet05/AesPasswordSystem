@@ -4,16 +4,16 @@ using ArunaObfuscationSystem;
 
 namespace ArunaObfuscationSystem.Dll
 {
-    public  class  Obfuscation
+    public  class  ArunaObfuscation
     {
-       static  ArunaObfuscation aruna = new ArunaObfuscation();
-        public static string ArunaObfuscation(string text)
+       static AesPasswordSystem.ArunaObfuscation aruna = new AesPasswordSystem.ArunaObfuscation();
+        public static string Obfuscation(string text)
         {
             var s = aruna.Obfuscate(text);
             text = s;
             return text;
         }
-        public static string ArunaSolution(string text)
+        public static string Enlighten(string text)
         {    
             var c = aruna.Enlighten(text);
             text = c;
